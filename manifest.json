@@ -6,7 +6,7 @@
   "version": "1.0",
   "homepage_url": "https://github.com/davidborland/recipeasy",
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "icons/recipeasy-48.png"
   },
 
   "permissions": [

@@ -1,6 +1,6 @@
 browser.contextMenus.create({
   id: "recipeasy",
-  title: "View recipe"
+  title: "Recipeasy"
 });
 
 browser.contextMenus.onClicked.addListener(function(info, tab) {
