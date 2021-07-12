@@ -1,12 +1,27 @@
 browser.contextMenus.create({
-  id: "recipeasy",
-  title: "Recipeasy"
+  id: "removeOverlay",
+  title: "Remove overlay"
 });
 
-browser.contextMenus.onClicked.addListener(function(info, tab) {
-  if (info.menuItemId == "recipeasy") {
-    browser.tabs.executeScript({
-      file: "recipeasy.js"
-    });
+browser.contextMenus.create({
+  id: "showRecipe",
+  title: "Show recipe"
+});
+
+browser.contextMenus.onClicked.addListener(function(info) {
+  switch (info.menuItemId) {
+    case "removeOverlay":
+      browser.tabs.executeScript({
+        file: "removeOverlay.js"
+      });
+
+      break;
+
+    case "showRecipe":
+      browser.tabs.executeScript({
+        file: "showRecipe.js"
+      });
+      
+      break;
   }
 });
