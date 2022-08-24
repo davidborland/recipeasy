@@ -1,5 +1,5 @@
-var container = document.getElementById("container");
+const divs = document.getElementsByTagName('div');
 
-document.body.textContent = "";
-
-document.body.appendChild(container);
+for (let div of divs) {
+    if (div.className.includes("modal")) div.remove();
+}

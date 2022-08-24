@@ -1,26 +1,23 @@
-function copyElements(collection) {
-    var a = [];
-    for (let item of collection) {
-        a.push(item);
-    }
+copyElements = collection => collection.slice();
 
-    return a;
-}
-
-var title = document.createElement("h1");
+const title = document.createElement("h1");
 title.textContent = document.getElementsByTagName("title")[0].textContent;
 
-var ingredientsHeader = document.createElement("h3");
+const ingredientsHeader = document.createElement("h3");
 ingredientsHeader.textContent = "Ingredients";
 
-var ingredients = copyElements(document.getElementsByClassName("recipe-ingredients"));
-ingredients.forEach(d => d.className = "");
-
-var stepsHeader = document.createElement("h3");
+const stepsHeader = document.createElement("h3");
 stepsHeader.textContent = "Steps";
 
-var steps = copyElements(document.getElementsByClassName("recipe-steps"));
-steps.forEach(d => d.className = "");
+const lis = document.getElementsByTagName("li");
+
+const ingredients = [];
+const steps = [];
+
+for (let li of lis) {
+    if (li.className.includes('ingredient_ingredient')) ingredients.push(li);
+    else if (li.className.includes('preparation_step')) steps.push(li);
+}
 
 document.head.textContent = "";
 document.body.textContent = "";
